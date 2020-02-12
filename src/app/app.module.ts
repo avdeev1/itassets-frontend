@@ -7,9 +7,6 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuLinkComponent } from './menu-link/menu-link.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { DepartmentPageComponent } from './department-page/department-page.component';
-import { ComputerPageComponent } from './computer-page/computer-page.component';
-import { SoftPageComponent } from './soft-page/soft-page.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +14,6 @@ import { SoftPageComponent } from './soft-page/soft-page.component';
     MenuComponent,
     MenuLinkComponent,
     MainPageComponent,
-    DepartmentPageComponent,
-    ComputerPageComponent,
-    SoftPageComponent,
   ],
   imports: [
     BrowserModule,

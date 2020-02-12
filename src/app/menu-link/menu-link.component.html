@@ -1,5 +1,15 @@
-<div class="menu-link">
-  <a class="menu-link__link menu-link__fonts" routerLink="{{link.link}}">
-    {{link.title}}
-  </a>
+<div class="menu-link-container">
+  <div class="menu-link" (click)="changeUrl()">
+    <a class="menu-link__link menu-link__fonts" routerLink="{{menu.link}}">
+      {{menu.title}}
+    </a>
+  </div>
+
+  <div class="sublinks-conteiner menu-sublinks_hidden">
+    <div class="menu-link" (click)="changeUrl()" *ngFor="let sublink of menu.children">
+      <a class="menu-link__link menu-link__fonts menu-link__small-fonts" routerLink="{{sublink.link}}">
+        {{sublink.title}}
+      </a>
+    </div>
+  </div>
 </div>

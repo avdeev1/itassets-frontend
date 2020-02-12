@@ -1,6 +1,15 @@
+.menu-link-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  border: 1px solid blue;
+}
+
 .menu-link {
   border: 1px solid red;
   display: flex;
+  width: 100%;
 }
 
 .menu-link__link {
@@ -15,8 +24,35 @@
   color: black;
 }
 
+.menu-link__small-fonts {
+  font-size: 16px;
+}
+
+.menu-link:hover~.menu-sublinks_hidden {
+  display: flex;
+}
+
+.sublinks-conteiner {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 100%;
+}
+
+.sublinks-conteiner:hover {
+  display: flex;
+  z-index: 999;
+}
+
+.menu-sublinks_hidden {
+  display: none;
+}
+
 .menu-link:hover {
   background-color: bisque;
   cursor: pointer;
 }
+
 

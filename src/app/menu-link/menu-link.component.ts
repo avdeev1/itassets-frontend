@@ -1,9 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-
-interface ILink {
-  link: string;
-  title: string;
-}
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {IMenu} from '../services/menu-service-items';
 
 @Component({
   selector: 'app-menu-link',
@@ -12,9 +8,14 @@ interface ILink {
 })
 export class MenuLinkComponent implements OnInit {
 
-  @Input() link: ILink;
+  @Output() refresh: EventEmitter<any> = new EventEmitter();
+
+  @Input() menu: IMenu;
   constructor() { }
 
   ngOnInit() {}
 
+  changeUrl() {
+    this.refresh.emit();
+  }
 }

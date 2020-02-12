@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { MENU_NAVBAR_LINK } from '../services/menu-service-items';
 
 @Component({
@@ -8,9 +8,14 @@ import { MENU_NAVBAR_LINK } from '../services/menu-service-items';
 })
 export class MenuComponent implements OnInit {
 
+  @Output() refreshUrl: EventEmitter<any> = new EventEmitter();
+
   navbarLink = MENU_NAVBAR_LINK;
   constructor() { }
 
   ngOnInit() {}
 
+  refresh($event) {
+    this.refreshUrl.emit();
+  }
 }
