@@ -1,0 +1,22 @@
+.menu-link {
+  border: 1px solid red;
+  display: flex;
+}
+
+.menu-link__link {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu-link__fonts {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-link:hover {
+  background-color: bisque;
+  cursor: pointer;
+}
+
