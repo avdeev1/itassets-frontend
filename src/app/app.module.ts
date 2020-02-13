@@ -8,6 +8,8 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuLinkComponent } from './menu-link/menu-link.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DataInfoComponent } from './data-info/data-info.component';
+import { FormComponentComponent } from './form-component/form-component.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { DataInfoComponent } from './data-info/data-info.component';
     MenuLinkComponent,
     MainPageComponent,
     DataInfoComponent,
+    FormComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

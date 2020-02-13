@@ -1,0 +1,36 @@
+.form-container {
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10%;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.button-delete {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10%;
+}
+
+button:hover, .button-delete:hover {
+  cursor: pointer;
+  background-color: antiquewhite;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+input {
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 5px;
+}

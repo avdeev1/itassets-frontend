@@ -11,11 +11,13 @@ export class MainPageComponent implements OnInit {
   url: string;
   data: any;
   isLoading = false;
+  object = Object;
 
   @Input() set _url(value) {
     this.url = value;
-    if (this.url && this.url !== '/main' &&  this.url.indexOf('/staff') === -1) {
+    if (this.url && this.url !== '/main') {
       this.isLoading = true;
+      this.data = [];
       this.http.get(`/api${this.url}`).subscribe(res => {
         this.isLoading = false;
         this.data = res;
@@ -23,7 +25,7 @@ export class MainPageComponent implements OnInit {
     } else {
       this.router.navigateByUrl('/').then();
       this.url = '/main';
-      this.data = {};
+      this.data = [];
     }
   }
   constructor(private http: HttpClient, private router: Router) {
@@ -31,6 +33,17 @@ export class MainPageComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  isStaff() {
+    return this.url.indexOf('/department') !== -1 || this.url === '/employee';
+  }
+
+  getNumberStaff() {
+    if (this.url === '/employee') {
+      return 'Список сотрудников';
+    }
+    return `Отдел ${this.url.split('/').pop()}`;
   }
 
   getPage() {
@@ -44,5 +57,9 @@ export class MainPageComponent implements OnInit {
       return 'nodata';
     }
     return 'data';
+  }
+
+  pushData(value: any) {
+    this.data.push(value);
   }
 }

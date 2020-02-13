@@ -17,27 +17,23 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
   },
   {
     title: 'Сотрудники',
-    link: '/staff',
+    link: '/employee',
     children: [
       {
-        title: 'Отдел #1',
-        link: '/staff/1',
+        title: 'Отдел ITIR',
+        link: '/department/name/ITIR',
       },
       {
-        title: 'Отдел #2',
-        link: '/staff/2',
+        title: 'Отдел OVP',
+        link: '/department/name/OVP',
       },
       {
-        title: 'Отдел #3',
-        link: '/staff/3',
+        title: 'Отдел PATS',
+        link: 'department/name/PATS',
       },
       {
-        title: 'Отдел #4',
-        link: '/staff/4',
-      },
-      {
-        title: 'Отдел #5',
-        link: '/staff/5',
+        title: 'Отдел PEL',
+        link: '/department/name/PEL',
       },
     ],
   },

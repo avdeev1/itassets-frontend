@@ -7,13 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   align-self: flex-start;
 }
 
 .body-main-content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: 1px solid black;
+  align-items: flex-start;
 }
