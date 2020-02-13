@@ -12,7 +12,7 @@ interface IMenuChildren {
 export const MENU_NAVBAR_LINK: IMenu[] = [
   {
     title: 'Главная',
-    link: '',
+    link: 'main',
     children: [],
   },
   {

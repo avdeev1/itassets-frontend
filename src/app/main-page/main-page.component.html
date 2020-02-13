@@ -1,4 +1,16 @@
-<div>
-  <p>url - {{url}}</p>
-  <p>{{data}}</p>
+<div [ngSwitch]="getPage()">
+  <div *ngSwitchCase="'main'">
+    Some information
+  </div>
+  <div *ngSwitchCase="'loading'">
+    <p>Данные грузятся, ждем :)</p>
+  </div>
+  <div *ngSwitchCase="'nodata'">
+    <p>Данных нет, Извините :(</p>
+  </div>
+  <span *ngSwitchDefault>
+    <app-data-info *ngFor="let obj of data" [data]="obj" [first]="true">
+    </app-data-info>
+  </span>
 </div>
+

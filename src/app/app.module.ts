@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuLinkComponent } from './menu-link/menu-link.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { DataInfoComponent } from './data-info/data-info.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MainPageComponent } from './main-page/main-page.component';
     MenuComponent,
     MenuLinkComponent,
     MainPageComponent,
+    DataInfoComponent,
   ],
   imports: [
     BrowserModule,

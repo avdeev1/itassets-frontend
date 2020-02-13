@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -6,21 +6,24 @@ import {Router} from '@angular/router';
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent implements OnInit {
   url: string;
-  data: string;
+  data: any;
+  isLoading = false;
 
   @Input() set _url(value) {
-    console.log(value);
     this.url = value;
-    if (this.url && this.url !== '/') {
+    if (this.url && this.url !== '/main' &&  this.url.indexOf('/staff') === -1) {
+      this.isLoading = true;
       this.http.get(`/api${this.url}`).subscribe(res => {
-        this.data = JSON.stringify(res);
+        this.isLoading = false;
+        this.data = res;
       });
     } else {
-      this.data = '';
+      this.router.navigateByUrl('/').then();
+      this.url = '/main';
+      this.data = {};
     }
   }
   constructor(private http: HttpClient, private router: Router) {
@@ -30,4 +33,16 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  getPage() {
+    if (!this.url || this.url === '/main' || this.url.indexOf('staff') !== -1) {
+      return 'main';
+    }
+    if (Object.keys(this.data).length === 0) {
+      if (this.isLoading) {
+        return 'loading';
+      }
+      return 'nodata';
+    }
+    return 'data';
+  }
 }

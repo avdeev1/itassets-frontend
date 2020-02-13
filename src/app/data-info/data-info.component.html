@@ -1,0 +1,19 @@
+<ul [class.data]="first">
+  <span *ngFor="let key of object.keys(data)">
+    <span *ngIf="!isNull(data[key]) && key !== 'id'">
+
+      <span *ngIf="!isObject(data[key]); then yes; else no"></span>
+
+      <ng-template #yes>
+        <li>
+          {{key}}: {{data[key]}}
+        </li>
+      </ng-template>
+
+      <ng-template #no>
+        <li *ngIf="!isNumber(key)">{{key}}:</li>
+        <app-data-info [data]="data[key]" [first]></app-data-info>
+      </ng-template>
+    </span>
+  </span>
+</ul>
