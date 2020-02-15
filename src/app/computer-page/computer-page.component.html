@@ -1,0 +1,11 @@
+<h2 class="title">Список устройств: {{getName()}}</h2>
+<div *ngIf="!isLoading">
+  <app-computer *ngFor="let comp of data" [computer]="comp" [routerLink]="['/', 'computer', comp.id]"></app-computer>
+  <div class="empty-data" *ngIf="data.length === 0">
+    Данных для отображения нет
+  </div>
+</div>
+
+<div class="loading" *ngIf="isLoading">
+  Подождите, идет загрузка данных :)
+</div>

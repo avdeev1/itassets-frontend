@@ -1,0 +1,39 @@
+<div class="staff-container">
+  <h2>{{getNumberStaff()}}</h2>
+  <div *ngIf="isLoading">
+    Подождите, данные грузятся :)
+  </div>
+  <ul *ngIf="!isLoading">
+    <li *ngFor="let key of object.keys(data)">
+      <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+      {{data[key].lastName}} {{data[key].firstName}} {{data[key].middleName}}
+    </li>
+  </ul>
+
+  <div class="add-staff" *ngIf="!isLoading">
+    <button (click)="openForm()" class="add-inputs">
+      {{isAdd ? 'Закрыть форму' : 'Добавить сотрудника'}}
+    </button>
+
+    <div *ngIf="isAdd" class="form-container">
+      <label>
+        Фамилия: <input type="text" [(ngModel)]="addPerson.lastName">
+      </label>
+      <label>
+        Имя: <input type="text" [(ngModel)]="addPerson.firstName">
+      </label>
+      <label>
+        Отчество: <input type="text" [(ngModel)]="addPerson.middleName">
+      </label>
+
+      <div class="invalid" *ngIf="isInvalid">
+        Заполните все поля
+      </div>
+
+      <button class="add-inputs submit" (click)="submit()">
+        Отправить
+      </button>
+    </div>
+  </div>
+</div>
+

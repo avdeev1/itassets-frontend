@@ -1,0 +1,29 @@
+.computer-container {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 15px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+.update {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.update:hover {
+  cursor: pointer;
+  background-color: wheat;
+}

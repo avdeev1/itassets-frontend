@@ -1,0 +1,36 @@
+<div class="soft-list">
+  <h2 class="title">Список софта: {{getName()}}</h2>
+  <div *ngIf="!isLoading">
+    <app-sowtware-list [list]="data"></app-sowtware-list>
+    <div class="empty-data" *ngIf="data.length === 0">
+      Данных для отображения нет
+    </div>
+  </div>
+
+  <div class="add-soft" *ngIf="!isLoading">
+    <button (click)="openForm()" class="add-inputs">
+      {{isAdd ? 'Закрыть форму' : 'Добавить софт'}}
+    </button>
+
+    <div *ngIf="isAdd" class="form-container">
+      <label>
+        Название: <input type="text" [(ngModel)]="addSoft.name">
+      </label>
+      <label>
+        Описание: <input type="text" [(ngModel)]="addSoft.description">
+      </label>
+
+      <div class="invalid" *ngIf="isInvalid">
+        Заполните все поля
+      </div>
+
+      <button class="add-inputs submit" (click)="submit()">
+        Отправить
+      </button>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    Подождите, идет загрузка данных :)
+  </div>
+</div>

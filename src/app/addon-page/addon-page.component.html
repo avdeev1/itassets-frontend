@@ -1,0 +1,36 @@
+<div class="addon-list">
+  <h2>Список устройств: {{getTitle()}}</h2>
+  <div *ngIf="!isLoading">
+    <app-addon-list [list]="data"></app-addon-list>
+    <div class="empty-data" *ngIf="data.length === 0">
+      Данных для отображения нет
+    </div>
+  </div>
+
+  <div class="add-hard" *ngIf="!isLoading">
+    <button (click)="openForm()" class="add-inputs">
+      {{isAdd ? 'Закрыть форму' : 'Добавить устройство'}}
+    </button>
+
+    <div *ngIf="isAdd" class="form-container">
+      <label>
+        Название: <input type="text" [(ngModel)]="addAdd.name">
+      </label>
+      <label>
+        Описание: <input type="text" [(ngModel)]="addAdd.description">
+      </label>
+
+      <div class="invalid" *ngIf="isInvalid">
+        Заполните все поля
+      </div>
+
+      <button class="add-inputs submit" (click)="submit()">
+        Отправить
+      </button>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    Подождите, идет загрузка данных :)
+  </div>
+</div>

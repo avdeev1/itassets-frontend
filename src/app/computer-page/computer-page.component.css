@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.loading {
+  font-size: 24px;
+}
+
+.empty-data {
+  margin: 15px;
+  padding: 10px;
+  font-size: 24px;
+}

@@ -1,8 +1,8 @@
 <div class="body-container">
   <div class="body-menu">
-    <app-menu (refreshUrl)="refreshUrl($event)"></app-menu>
+    <app-menu></app-menu>
   </div>
   <div class="body-main-content">
-    <app-main-page [_url]="url"></app-main-page>
+    <router-outlet></router-outlet>
   </div>
 </div>

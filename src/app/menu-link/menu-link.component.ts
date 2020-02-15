@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IMenu} from '../services/menu-service-items';
 
 @Component({
@@ -8,14 +8,8 @@ import {IMenu} from '../services/menu-service-items';
 })
 export class MenuLinkComponent implements OnInit {
 
-  @Output() refresh: EventEmitter<any> = new EventEmitter();
-
   @Input() menu: IMenu;
   constructor() { }
 
   ngOnInit() {}
-
-  changeUrl() {
-    this.refresh.emit();
-  }
 }

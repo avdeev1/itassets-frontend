@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataInfoComponent } from './data-info.component';
+import { SoftwarePageComponent } from './software-page.component';
 
-describe('DataInfoComponent', () => {
-  let component: DataInfoComponent;
-  let fixture: ComponentFixture<DataInfoComponent>;
+describe('SoftwarePageComponent', () => {
+  let component: SoftwarePageComponent;
+  let fixture: ComponentFixture<SoftwarePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataInfoComponent ]
+      declarations: [ SoftwarePageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataInfoComponent);
+    fixture = TestBed.createComponent(SoftwarePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

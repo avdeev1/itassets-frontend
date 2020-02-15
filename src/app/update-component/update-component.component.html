@@ -1,0 +1,98 @@
+<div class="update-container upd" *ngIf="comp !== undefined">
+  <label>
+    Имя: <input type="text" [(ngModel)]="comp.name">
+  </label>
+  <label>
+    Категория:
+    <select [(ngModel)]="comp.computerCategory">
+      <option *ngFor="let item of compList"
+              [value]="item"
+              [selected]="isSelected(item, 0, 'computerCategory')">{{item}}</option>
+    </select>
+  </label>
+  <label>
+    Описание: <input type="text" [(ngModel)]="comp.description">
+  </label>
+
+  <div class="title">
+    Список железа:
+  </div>
+
+  <div class="update-container" *ngFor="let obj of fakeListHard; let i = index">
+    <label>
+      Имя: <input type="text" [(ngModel)]="comp.hardwareList[i].name">
+    </label>
+    <label>
+      Описание: <input type="text" [(ngModel)]="comp.hardwareList[i].description">
+    </label>
+    <label>
+      Категория:
+      <select [(ngModel)]="comp.hardwareList[i].hardwareCategory">
+        <option *ngFor="let item of hardList"
+                [value]="item"
+                [selected]="isSelected(item, i, 'hardwareList', 'hardwareCategory')">{{item}}</option>
+      </select>
+    </label>
+
+    <button (click)="delete('hardwareList', i)">
+      Удалить железку
+    </button>
+  </div>
+
+  <button (click)="addNew('hard')">
+    Добавить железку
+  </button>
+
+
+  <div class="title">
+    Список софта:
+  </div>
+  <div class="update-container" *ngFor="let obj of fakeListSoft; let i = index">
+    <label>
+      Имя: <input type="text" [(ngModel)]="comp.softwareList[i].name">
+    </label>
+    <label>
+      Описание: <input type="text" [(ngModel)]="comp.softwareList[i].description">
+    </label>
+    <label>
+      Категория:
+      <select [(ngModel)]="comp.softwareList[i].softwareCategory">
+        <option *ngFor="let item of softList"
+                [value]="item"
+        [selected]="isSelected(item, i, 'softwareList', 'softwareCategory')">{{item}}</option>
+      </select>
+    </label>
+
+    <button (click)="delete('softwareList', i)">
+      Удалить софт
+    </button>
+  </div>
+
+  <button (click)="addNew('soft')">
+    Добавить программу
+  </button>
+
+  <div class="title">
+    Список устройств:
+  </div>
+  <div class="update-container" *ngFor="let obj of fakeListAdd; let i = index">
+    <label>
+      Имя: <input type="text" [(ngModel)]="comp.addonList[i].name">
+    </label>
+    <label>
+      Описание: <input type="text" [(ngModel)]="comp.addonList[i].description">
+    </label>
+
+    <button (click)="delete('addonList', i)">
+      Удалить устройство
+    </button>
+  </div>
+
+  <button (click)="addNew('add')">
+    Добавить устройство
+  </button>
+
+  <button class="save" (click)="saveData()">
+    Сохранить
+  </button>
+</div>

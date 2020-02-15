@@ -1,0 +1,30 @@
+<div *ngIf="computer !== undefined" class="computer-container">
+  <div>
+    Имя: {{computer.name}}
+  </div>
+
+  <div>
+    Категория: {{computer.computerCategory}}
+  </div>
+
+  <div>
+    Описание: {{computer.description}}
+  </div>
+
+  <div *ngIf="computer.hardwareList.length > 0">
+    Железо:
+    <app-hardware-list [list]="computer.hardwareList"></app-hardware-list>
+  </div>
+
+  <div *ngIf="computer.softwareList.length > 0">
+    Софт:
+    <app-sowtware-list [list]="computer.softwareList"></app-sowtware-list>
+  </div>
+
+  <div *ngIf="computer.addonList.length > 0">
+    Устройства:
+    <app-addon-list [list]="computer.addonList"></app-addon-list>
+  </div>
+
+  <button class="update" *ngIf="isCanUpdate()" [routerLink]="['/', 'update', id]">Изменить</button>
+</div>

@@ -1,35 +1,4 @@
-<ng-template *ngIf="isStaff(); then staff; else notstaff">
-</ng-template>
-<ng-template #staff>
-  <h2>{{getNumberStaff()}}</h2>
-  <li *ngFor="let key of object.keys(data)">
-    <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
-    {{data[key].lastName}} {{data[key].firstName}} {{data[key].middleName}}
-  </li>
-
-  <div *ngIf="isLoading">
-    <p>Данные грузятся, ждем :)</p>
-  </div>
-</ng-template>
-
-<ng-template #notstaff >
-  <div [ngSwitch]="getPage()">
-    <div *ngSwitchCase="'main'">
-      <h1>Внимание! Спасибо за внимание!</h1>
-      <h2>С Вас штраф - одно сердечко!!!</h2>
-    </div>
-    <div *ngSwitchCase="'loading'">
-      <p>Данные грузятся, ждем :)</p>
-    </div>
-    <div *ngSwitchCase="'nodata'">
-      <p>Данных нет, Извините :(</p>
-    </div>
-    <span *ngSwitchDefault>
-    <app-data-info *ngFor="let obj of data" [data]="obj" [first]="true">
-    </app-data-info>
-  </span>
-  </div>
-</ng-template>
-
-<app-form-component (push)="pushData($event)" *ngIf="getPage() !== 'main' && getPage() !== 'loading'">
-</app-form-component>
+<div>
+  <h1>Внимание! Спасибо за внимание!</h1>
+  <h2>С Вас штраф - одно сердечко!!!</h2>
+</div>

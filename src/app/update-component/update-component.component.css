@@ -1,0 +1,55 @@
+/*.upd {*/
+/*  border: 1px solid black;*/
+/*  border-radius: 5%;*/
+/*}*/
+
+.update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px;
+
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+input {
+  font-size: 20px;
+  padding: 5px;
+}
+
+label {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+button {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5%;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: wheat;
+}
+
+.save {
+  font-size: 24px;
+  align-self: center;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+}
