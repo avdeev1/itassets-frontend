@@ -10,14 +10,16 @@ import {HttpClient} from '@angular/common/http';
 export class AppStaffComponent implements OnInit {
   object = Object;
   isLoading = true;
-  data: object;
+  data: any;
   prevUrl = '';
   isAdd = false;
   addPerson = {
     firstName: '',
     lastName: '',
     middleName: '',
-    department_id: this.router.url.split('/').reverse()[0],
+    department: {
+      id: this.router.url.split('/').reverse()[0],
+    },
   };
   isInvalid = false;
 
@@ -33,11 +35,11 @@ export class AppStaffComponent implements OnInit {
     if (this.router.url === '/employee') {
       return 'Список сотрудников';
     }
-    return `Отдел ${this.router.url.split('/').pop()}`;
+    return `Отдел #${this.router.url.split('/').pop()}`;
   }
 
   getData() {
-    this.data = {};
+    this.data = [];
     this.isLoading = true;
     this.http.get(`/api${this.router.url}`).subscribe(res => {
       this.isLoading = false;
@@ -63,6 +65,9 @@ export class AppStaffComponent implements OnInit {
       return;
     }
     this.isInvalid = false;
+    this.http.post('api/employee', this.addPerson).subscribe(res => {
+      this.data.push(res);
+    });
   }
 
   private updateForm() {
@@ -72,7 +77,7 @@ export class AppStaffComponent implements OnInit {
       firstName: '',
       lastName: '',
       middleName: '',
-      department_id: this.router.url.split('/').reverse()[0],
+      department: { id: this.router.url.split('/').reverse()[0], },
     };
   }
 }

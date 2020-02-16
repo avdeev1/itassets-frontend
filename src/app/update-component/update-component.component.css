@@ -53,3 +53,14 @@ select {
   font-size: 20px;
   padding: 5px;
 }
+
+.add-owner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.add-owner label {
+  margin-left: 10px;
+}

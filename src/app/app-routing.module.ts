@@ -15,7 +15,7 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
-    path: 'department/name/:name',
+    path: 'department/:id',
     component: AppStaffComponent,
   },
   {
@@ -41,7 +41,11 @@ const routes: Routes = [
   {
     path: 'update/:id',
     component: UpdateComponentComponent,
-  }
+  },
+  {
+    path: 'create',
+    component: UpdateComponentComponent,
+  },
 ];
 
 @NgModule({

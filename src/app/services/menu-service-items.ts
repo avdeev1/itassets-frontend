@@ -20,20 +20,20 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
     link: '/employee',
     children: [
       {
-        title: 'Отдел ITIR',
-        link: '/department/name/ITIR',
+        title: 'Отдел #1',
+        link: '/department/1',
       },
       {
-        title: 'Отдел OVP',
-        link: '/department/name/OVP',
+        title: 'Отдел #2',
+        link: '/department/2',
       },
       {
-        title: 'Отдел PATS',
-        link: 'department/name/PATS',
+        title: 'Отдел #3',
+        link: 'department/3',
       },
       {
-        title: 'Отдел PEL',
-        link: '/department/name/PEL',
+        title: 'Отдел #4',
+        link: '/department/4',
       },
     ],
   },

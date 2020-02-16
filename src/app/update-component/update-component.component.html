@@ -14,6 +14,22 @@
     Описание: <input type="text" [(ngModel)]="comp.description">
   </label>
 
+  <div class="add-owner" *ngIf="isCreate">
+    <h4>Владелец:</h4>
+    <label>
+      Фамилия: <input type="text" [(ngModel)]="comp.employee.lastName">
+    </label>
+    <label>
+      Имя: <input type="text" [(ngModel)]="comp.employee.firstName">
+    </label>
+    <label>
+      Отчество: <input type="text" [(ngModel)]="comp.employee.middleName">
+    </label>
+    <label>
+      Номер отдела: <input type="text" [(ngModel)]="comp.employee.department.id">
+    </label>
+  </div>
+
   <div class="title">
     Список железа:
   </div>
@@ -59,7 +75,7 @@
       <select [(ngModel)]="comp.softwareList[i].softwareCategory">
         <option *ngFor="let item of softList"
                 [value]="item"
-        [selected]="isSelected(item, i, 'softwareList', 'softwareCategory')">{{item}}</option>
+                [selected]="isSelected(item, i, 'softwareList', 'softwareCategory')">{{item}}</option>
       </select>
     </label>
 
@@ -93,6 +109,6 @@
   </button>
 
   <button class="save" (click)="saveData()">
-    Сохранить
+    {{isCreate ? 'Добавить' : 'Сохранить'}}
   </button>
 </div>
