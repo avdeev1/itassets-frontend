@@ -7,28 +7,28 @@
     </div>
   </div>
 
-  <div class="add-hard" *ngIf="!isLoading">
-    <button (click)="openForm()" class="add-inputs">
-      {{isAdd ? 'Закрыть форму' : 'Добавить железо'}}
-    </button>
+<!--  <div class="add-hard" *ngIf="!isLoading">-->
+<!--    <button (click)="openForm()" class="add-inputs">-->
+<!--      {{isAdd ? 'Закрыть форму' : 'Добавить железо'}}-->
+<!--    </button>-->
 
-    <div *ngIf="isAdd" class="form-container">
-      <label>
-        Название: <input type="text" [(ngModel)]="addHard.name">
-      </label>
-      <label>
-        Описание: <input type="text" [(ngModel)]="addHard.description">
-      </label>
+<!--    <div *ngIf="isAdd" class="form-container">-->
+<!--      <label>-->
+<!--        Название: <input type="text" [(ngModel)]="addHard.name">-->
+<!--      </label>-->
+<!--      <label>-->
+<!--        Описание: <input type="text" [(ngModel)]="addHard.description">-->
+<!--      </label>-->
 
-      <div class="invalid" *ngIf="isInvalid">
-        Заполните все поля
-      </div>
+<!--      <div class="invalid" *ngIf="isInvalid">-->
+<!--        Заполните все поля-->
+<!--      </div>-->
 
-      <button class="add-inputs submit" (click)="submit()">
-        Отправить
-      </button>
-    </div>
-  </div>
+<!--      <button class="add-inputs submit" (click)="submit()">-->
+<!--        Отправить-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
 
   <div class="loading" *ngIf="isLoading">
     Подождите, идет загрузка данных :)

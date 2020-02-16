@@ -26,7 +26,12 @@
       Отчество: <input type="text" [(ngModel)]="comp.employee.middleName">
     </label>
     <label>
-      Номер отдела: <input type="text" [(ngModel)]="comp.employee.department.id">
+      Номер отдела: <select [(ngModel)]="comp.employee.department.id">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
     </label>
   </div>
 
@@ -97,6 +102,14 @@
     </label>
     <label>
       Описание: <input type="text" [(ngModel)]="comp.addonList[i].description">
+    </label>
+    <label>
+      Категория:
+      <select [(ngModel)]="comp.addonList[i].addonCategory">
+        <option *ngFor="let item of addList"
+                [value]="item"
+                [selected]="isSelected(item, i, 'hardwareList', 'hardwareCategory')">{{item}}</option>
+      </select>
     </label>
 
     <button (click)="delete('addonList', i)">

@@ -14,9 +14,9 @@ export class UpdateComponentComponent implements OnInit {
   fakeListSoft = [];
   fakeListHard = [];
   fakeListAdd = [];
-  softList = ['OC', 'PROGRAM'];
-  hardList = ['MOTHERBOARD', 'RAM', 'ROM', 'GPU', 'CPU'];
-  addList = ['MONITOR', 'KEYBOARD', 'MOUSE'];
+  softList = ['OS', 'PROGRAM'];
+  hardList = ['MOTHERBOARD', 'RAM', 'ROM', 'GPU', 'CPU', 'PS'];
+  addList = ['MONITOR', 'KEYBOARD', 'MOUSE', 'PRINTER'];
   compList = ['PC', 'NOTEBOOK'];
 
   constructor(private router: Router, private http: HttpClient) { }
@@ -108,6 +108,7 @@ export class UpdateComponentComponent implements OnInit {
   createData() {
     this.http.post('api/computer', this.comp).subscribe(res => {
       console.log(res);
+      this.router.navigateByUrl(`/computer/category/${this.comp.computerCategory}`);
     });
   }
 

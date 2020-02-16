@@ -80,4 +80,11 @@ export class AppStaffComponent implements OnInit {
       department: { id: this.router.url.split('/').reverse()[0], },
     };
   }
+
+  delete(key: string, index: number) {
+    console.log(key);
+    this.http.delete(`api/employee/${key}`).subscribe(res => {
+      this.data.splice(index, 1);
+    });
+  }
 }

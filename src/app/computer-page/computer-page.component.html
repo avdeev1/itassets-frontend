@@ -1,6 +1,6 @@
 <h2 class="title">Список устройств: {{getName()}}</h2>
 <button class="create" routerLink="/create">
-  Добавить компутер
+  Добавить компьютер
 </button>
 <div *ngIf="!isLoading">
   <app-computer *ngFor="let comp of data" [computer]="comp" [routerLink]="['/', 'computer', comp.id]"></app-computer>

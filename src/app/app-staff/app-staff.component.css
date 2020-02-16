@@ -62,3 +62,8 @@ label {
   align-self: center;
   margin-bottom: 10px;
 }
+
+.delete {
+  font-size: 18px;
+  padding: 5px;
+}

@@ -76,8 +76,8 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
         link: '/hardware/category/CPU',
       },
       {
-        title: 'Остальное',
-        link: '/hardware/category/OTHER',
+        title: 'Блок питания',
+        link: '/hardware/category/PS',
       },
     ]
   },
@@ -87,15 +87,11 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
     children: [
       {
         title: 'ОС',
-        link: '/software/category/OC',
+        link: '/software/category/OS',
       },
       {
         title: 'Программы',
         link: '/software/category/PROGRAM',
-      },
-      {
-        title: 'Остальное',
-        link: '/software/category/OTHER',
       },
     ]
   },
@@ -116,8 +112,8 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
         link: '/addon/category/MOUSE',
       },
       {
-        title: 'Остальное',
-        link: '/addon/category/OTHER',
+        title: 'Принтеры',
+        link: '/addon/category/PRINTER',
       },
     ]
   }
