@@ -82,7 +82,6 @@ export class AppStaffComponent implements OnInit {
   }
 
   delete(key: string, index: number) {
-    console.log(key);
     this.http.delete(`api/employee/${key}`).subscribe(res => {
       this.data.splice(index, 1);
     });

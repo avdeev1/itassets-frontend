@@ -37,6 +37,17 @@ export class UpdateComponentComponent implements OnInit {
       this.fakeListSoft = res.softwareList;
       this.fakeListHard = res.hardwareList;
       this.fakeListAdd = res.addonList;
+      if (this.comp.employee === null) {
+        this.comp.employee = {
+          lastName: '',
+            firstName: '',
+            middleName: '',
+            department: {
+            id: '',
+              name: '',
+          },
+        };
+      }
     });
   }
 
@@ -54,8 +65,9 @@ export class UpdateComponentComponent implements OnInit {
         middleName: '',
         department: {
           id: '',
+          name: '',
         },
-      }
+      },
     };
     this.fakeListSoft = this.comp.softwareList;
     this.fakeListHard = this.comp.hardwareList;
@@ -93,21 +105,22 @@ export class UpdateComponentComponent implements OnInit {
   }
 
   saveData() {
-    console.log(this.comp);
+    if (!this.comp.employee.firstName) {
+      this.comp.employee = null;
+    } else {
+      this.comp.employee.department.name = `Отдел #${this.comp.employee.department.id}`;
+    }
     if (this.isCreate) {
       this.createData();
       return;
     }
     this.http.put(`api/computer/${this.id}`, this.comp).subscribe(res => {
-      console.log('finish');
-      console.log(res);
       this.router.navigateByUrl(`/computer/${this.id}`);
     });
   }
 
   createData() {
     this.http.post('api/computer', this.comp).subscribe(res => {
-      console.log(res);
       this.router.navigateByUrl(`/computer/category/${this.comp.computerCategory}`);
     });
   }

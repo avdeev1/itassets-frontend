@@ -11,6 +11,24 @@
     Описание: {{computer.description}}
   </div>
 
+  <div>
+    Владелец: {{haveOwner ? '' : 'Нет владельца'}}
+    <div *ngIf="haveOwner" class="owner">
+      <div>
+        Имя: {{computer.employee.firstName}}
+      </div>
+      <div>
+        Фамилия: {{computer.employee.lastName}}
+      </div>
+      <div>
+        Отчество: {{computer.employee.middleName}}
+      </div>
+      <div>
+        Номер отдела: {{computer.employee.department.id}}
+      </div>
+    </div>
+  </div>
+
   <div *ngIf="computer.hardwareList.length > 0">
     Железо:
     <app-hardware-list [list]="computer.hardwareList"></app-hardware-list>
@@ -26,5 +44,8 @@
     <app-addon-list [list]="computer.addonList"></app-addon-list>
   </div>
 
-  <button class="update" *ngIf="isCanUpdate()" [routerLink]="['/', 'update', id]">Изменить</button>
+  <div class="button-container">
+    <button class="update" *ngIf="isCanUpdate()" [routerLink]="['/', 'update', id]">Изменить</button>
+    <button class="update" *ngIf="isCanUpdate()" (click)="delete(computer.id)">Удалить</button>
+  </div>
 </div>

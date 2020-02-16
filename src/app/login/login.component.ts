@@ -16,13 +16,11 @@ export class LoginComponent implements OnInit {
   }
 
   auth() {
-    console.log(this.login, this.password);
     const bodyJson = JSON.stringify({
       username: this.login,
       password: this.password,
     });
     this.http.post('/login', bodyJson).subscribe(res => {
-      console.log(res);
     });
   }
 

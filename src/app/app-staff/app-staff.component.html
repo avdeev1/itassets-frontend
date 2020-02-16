@@ -5,7 +5,7 @@
   </div>
   <ul *ngIf="!isLoading">
     <li *ngFor="let key of object.keys(data); let i = index">
-      <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+      <i class="fa fa-user" aria-hidden="true"></i>
       {{data[key].lastName}} {{data[key].firstName}} {{data[key].middleName}}
       <button class="submit add-inputs delete" (click)="delete(data[key].id, i)">Удалить</button>
     </li>

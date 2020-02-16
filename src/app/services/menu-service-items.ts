@@ -96,7 +96,7 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
     ]
   },
   {
-    title: 'Периферические устр.',
+    title: 'Периферические устройства',
     link: '/addon',
     children: [
       {
@@ -112,7 +112,7 @@ export const MENU_NAVBAR_LINK: IMenu[] = [
         link: '/addon/category/MOUSE',
       },
       {
-        title: 'Принтеры',
+        title: 'Принтер',
         link: '/addon/category/PRINTER',
       },
     ]
