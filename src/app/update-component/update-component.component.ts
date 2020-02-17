@@ -114,14 +114,14 @@ export class UpdateComponentComponent implements OnInit {
       this.createData();
       return;
     }
-    this.http.put(`api/computer/${this.id}`, this.comp).subscribe(res => {
-      this.router.navigateByUrl(`/computer/${this.id}`);
+    this.http.put(`api/computer/${this.id}`, this.comp).subscribe((res: any)=> {
+      this.router.navigateByUrl(`/computer/${res.id}`);
     });
   }
 
   createData() {
-    this.http.post('api/computer', this.comp).subscribe(res => {
-      this.router.navigateByUrl(`/computer/category/${this.comp.computerCategory}`);
+    this.http.post('api/computer', this.comp).subscribe((res: any) => {
+      this.router.navigateByUrl(`/computer/${res.id}`);
     });
   }
 
